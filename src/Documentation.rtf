@@ -1,15 +1,40 @@
 Data Structure
 
-hunger: True/False
-mood: Happy/Sad/Mad
-diaper: Clean/Wet/Poopie
 
+{backend.py}-----{statemachine}-----{frontendapp.js
+[main table]     [machinetable]     [switchboard]
+.
+----------------------------------------------------------------------------
 
 Dynamo  Main Creature Table --  Store of state
-Key         Attributes ---->
+This is a list of the state that needs to be retained in the database
 
+Key         Attributes ---->
 Tookie | CreatureType:cat    |   CreatureMood:happy           |CreatureHunger:Full    |CreatureDiaper:Clean  |
-Cookie | CreatureType:mouse  |   CreatureMood:not-happy
-Nookie | CreatureType:dog    |   CreatureMood:getting-happy
-Slukie | CreatureType:monster|   CreatureMood:could-be-better
+Cookie | CreatureType:mouse  |   CreatureMood:not-happy       |
+Nookie | CreatureType:dog    |   CreatureMood:getting-happy   |
+Slukie | CreatureType:monster|   CreatureMood:could-be-better |
 Dooki  | CreatureType:baby   |   CreatureMood:raging          |CreatureHunger:Hungry  |CreatureDiaper:Dirty  |
+.
+-------------------------------------------------------------------------
+
+This is a table of the state that is passed through the state machine:
+ 
+maintained at dynamo       
+       {
+       justfed: true, 
+       justpetted: true, 
+       justpottychanged: true
+       }
+.
+-------------------------------------------------------------------------
+
+This is a table of the state maintaned as a switchboard:
+A way to transfer state from any source into the state machine.
+
+maintained at dynamo
+       {
+       justfed: true, 
+       justpetted: true, 
+       justpottychanged: true
+       }
