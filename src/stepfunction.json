@@ -13,45 +13,38 @@
                 "cat2": false,
                 "cat3": true,
                 "cat4": false,
-                "cat5": true,
+                "cat5": true
                 },
-      "Next": "check switchboard"
+      "Next": "checkswitchboard"
     },
-	  "checkswitchboard ": {
+	  "checkswitchboard": {
   	  "Comment": "Look for input from user. Disabled for now",
-      "Type": "pass",
-      "Resource": "arn:aws:lambda:us-east-1:980965586942:function:responder",
-      "TimeoutSeconds": 300,
-      "HeartbeatSeconds": 60,
-      "next": "checkcats"
+      "Type": "Pass",
+      "Next": "checkcats"
 	  },
     "checkcats": {
       "Comment": "See what cats have shown up",
-      "Type": "task",
+      "Type": "Task",
       "Resource": "arn:aws:lambda:us-east-1:980965586942:function:responder",
-      "Result": {"isfed": true},
       "Next": "drawcats"
     },
     "drawcats": {
       "Comment": "Generate an image of the world",
-      "Type": "task",
+      "Type": "Task",
       "Resource": "arn:aws:lambda:us-east-1:980965586942:function:responder",
-      "Result": {"isfed": true},
       "Next": "delay"
     },
     "delay": {
       "Comment": "Delay a bit",
-      "Type": "wait",
-      "Resource": "arn:aws:lambda:us-east-1:980965586942:function:responder",
-      "Delay": {"isfed": true},
-      "Next": "delaytimer"
+      "Type": "Wait",
+      "Seconds": 10,
+      "Next": "cleanup"
     },
     "cleanup": {
       "Comment": "Clear out food bowls and let cats leave",
-      "Type": "task",
+      "Type": "Task",
       "Resource": "arn:aws:lambda:us-east-1:980965586942:function:responder",
-      "Result": {"isfed": true},
-      "Next": "checkswitchboard"
-    },
+      "End": true
+    }
   }
 } 
