@@ -1,30 +1,33 @@
 Data Structure
 
 
-{backend.py}-----{statemachine}-----{frontendapp.js
+{backend.py}-----{statemachine}-----{frontendapp.js}
 [main table]     [machinetable]     [switchboard]
 .
 ----------------------------------------------------------------------------
 
-Dynamo  Main Creature Table --  Store of state
-This is a list of the state that needs to be retained in the database
+Dynamo  Cat Stats Table
+This is a list of the stats for each cat
 
 Key         Attributes ---->
-Tookie | CreatureType:cat    |   CreatureMood:happy           |CreatureHunger:Full    |CreatureDiaper:Clean  |
-Cookie | CreatureType:mouse  |   CreatureMood:not-happy       |
-Nookie | CreatureType:dog    |   CreatureMood:getting-happy   |
-Slukie | CreatureType:monster|   CreatureMood:could-be-better |
-Dooki  | CreatureType:baby   |   CreatureMood:raging          |CreatureHunger:Hungry  |CreatureDiaper:Dirty  |
+Tookie | Food: frisky  | toy: heater | AppearChance: 50%  
+Cookie | Food: frisky  | toy: heater | AppearChance: 60%
+Nookie | Food: frisky  | toy: heater | AppearChance: 70%
+Sookie | Food: frisky  | toy: heater | AppearChance: 80%
+Dooki  | Food: frisky  | toy: heater | AppearChance: 90%
 .
 -------------------------------------------------------------------------
 
-This is a table of the state that is passed through the state machine:
- 
-maintained at dynamo       
+passed through the state machine       
        {
-       justfed: true, 
-       justpetted: true, 
-       justpottychanged: true
+       food1: true, 
+       food2: true, 
+       toy1: true,
+       toy2: true,
+       toy3: false,
+       cat1: true,
+       cat2: false,
+       cat3: true,
        }
 .
 -------------------------------------------------------------------------
@@ -34,7 +37,12 @@ A way to transfer state from any source into the state machine.
 
 maintained at dynamo
        {
-       justfed: true, 
-       justpetted: true, 
-       justpottychanged: true
+       food1: true,
+       food2: false,
+       toy1: true,
+       toy2: false,
+       toy3: true,
+       cat1: true, 
+       cat2: true,
+       cat3: false,
        }
