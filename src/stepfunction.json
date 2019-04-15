@@ -3,12 +3,23 @@
   "States": {
     "Init": {
       "Type": "Pass",
-      "Result": {"isfed": true},
+      "Result": {
+                "food1": true, 
+                "food2": true, 
+                "toy1": true,
+                "toy2": true,
+                "toy3": false,
+                "cat1": true,
+                "cat2": false,
+                "cat3": true,
+                "cat4": false,
+                "cat5": true,
+                },
       "Next": "check switchboard"
     },
 	  "checkswitchboard ": {
-  	  "Comment": "Look for input from user",
-      "Type": "Task",
+  	  "Comment": "Look for input from user. Disabled for now",
+      "Type": "pass",
       "Resource": "arn:aws:lambda:us-east-1:980965586942:function:responder",
       "TimeoutSeconds": 300,
       "HeartbeatSeconds": 60,
