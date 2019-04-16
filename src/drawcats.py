@@ -1,19 +1,30 @@
 from PIL import Image
 
-mainimage = Image.open("")
+event = {"food1": True, 
+         "food2": True, 
+         "toy1": True,
+         "toy2": True,
+         "toy3": False,
+         "cat1": True,
+         "cat2": False,
+         "cat3": True,
+         "cat4": False,
+         "cat5": True}
 
-food1 = Image.open("")  
-food2 = Image.open("")
-toy1  = Image.open("")
-toy2  = Image.open("")
-toy3  = Image.open("")
-cat1  = Image.open("")
-cat2  = Image.open("")
-cat3  = Image.open("")
-cat4  = Image.open("")
-cat5  = Image.open("")
+mainimage = Image.open("house1.png")
 
+food1 = Image.open("food1.png")  
+food2 = Image.open("food2.png")
+toy1  = Image.open("toy1.png")
+toy2  = Image.open("toy2.png")
+toy3  = Image.open("toy3.png")
+cat1  = Image.open("cat1.png")
+cat2  = Image.open("cat2.png")
+cat3  = Image.open("cat3.png")
+cat4  = Image.open("cat4.png")
+cat5  = Image.open("cat5.png")
 
+#mainimage.show()
 if event[food1]:
 	mainimage.paste(food1, (0, 0), food1)
 if event[food2]:
