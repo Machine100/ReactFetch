@@ -24,7 +24,6 @@ cat3  = Image.open("cat3.png")
 cat4  = Image.open("cat4.png")
 cat5  = Image.open("cat5.png")
 
-#mainimage.show()
 if event[food1]:
 	mainimage.paste(food1, (0, 0), food1)
 if event[food2]:
