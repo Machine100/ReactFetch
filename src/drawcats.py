@@ -14,25 +14,25 @@ cat4  = Image.open("")
 cat5  = Image.open("")
 
 
-if state[]:
+if event[food1]:
 	mainimage.paste(food1, (0, 0), food1)
-if state[]:
+if event[food2]:
 	mainimage.paste(food2, (0, 0), food2)
-if state[]:
+if event[toy1]:
 	mainimage.paste(toy1,  (0, 0), toy1)
-if state[]:
+if event[toy2]:
 	mainimage.paste(toy2,  (0, 0), toy2)
-if state[]:
+if event[toy3]:
 	mainimage.paste(toy3,  (0, 0), toy3)
-if state[]:
+if event[cat1]:
 	mainimage.paste(cat1,  (0, 0), cat1)
-if state[]:
+if event[cat2]:
 	mainimage.paste(cat2,  (0, 0), cat2)
-if state[]:
+if event[cat3]:
 	mainimage.paste(cat3,  (0, 0), cat3)
-if state[]:
+if event[cat4]:
 	mainimage.paste(cat4,  (0, 0), cat4)
-if state[]:
+if event[cat5]:
 	mainimage.paste(cat5,  (0, 0), cat5)
 
 mainimage.show()
