@@ -18,14 +18,15 @@
       "Next": "checkswitchboard"
     },
 	  "checkswitchboard": {
-  	  "Comment": "Look for input from user. Disabled for now",
+  	  "Comment": "Look for input from user.",
       "Type": "Pass",
+      "Comment": "Disabled for now.",
       "Next": "checkcats"
 	  },
     "checkcats": {
       "Comment": "See what cats have shown up",
       "Type": "Task",
-      "Resource": "arn:aws:lambda:us-east-1:980965586942:function:responder",
+      "Resource": "arn:aws:lambda:us-east-1:980965586942:function:checkcats",
       "Next": "drawcats"
     },
     "drawcats": {
@@ -42,8 +43,8 @@
     },
     "cleanup": {
       "Comment": "Clear out food bowls and let cats leave",
-      "Type": "Task",
-      "Resource": "arn:aws:lambda:us-east-1:980965586942:function:responder",
+      "Type": "Pass",
+      "Comment": "Disabled for now.",
       "End": true
     }
   }
