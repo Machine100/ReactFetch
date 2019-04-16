@@ -9,11 +9,11 @@
                 "toy1": true,
                 "toy2": true,
                 "toy3": false,
-                "cat1": true,
+                "cat1": false,
                 "cat2": false,
-                "cat3": true,
+                "cat3": false,
                 "cat4": false,
-                "cat5": true
+                "cat5": false
                 },
       "Next": "checkswitchboard"
     },
