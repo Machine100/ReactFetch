@@ -1,4 +1,6 @@
 from PIL import Image
+import requests
+from io import BytesIO
 
 event = {"food1": True, 
          "food2": True, 
@@ -11,18 +13,41 @@ event = {"food1": True,
          "cat4": False,
          "cat5": True}
 
-mainimage = Image.open("house1.png")
+house1url = "https://s3.amazonaws.com/derffred/house1.png"
+food1url  = "https://s3.amazonaws.com/derffred/food1.png"
+food2url  = "https://s3.amazonaws.com/derffred/food2.png"
+toy1url   = "https://s3.amazonaws.com/derffred/toy1.png"
+toy2url   = "https://s3.amazonaws.com/derffred/toy2.png"
+toy3url   = "https://s3.amazonaws.com/derffred/toy3.png"
+cat1url   = "https://s3.amazonaws.com/derffred/cat1.png"
+cat2url   = "https://s3.amazonaws.com/derffred/cat2.png"
+cat3url   = "https://s3.amazonaws.com/derffred/cat3.png"
+cat4url   = "https://s3.amazonaws.com/derffred/cat4.png"
+cat5url   = "https://s3.amazonaws.com/derffred/cat5.png"
 
-imgfood1 = Image.open("food1.png")  
-imgfood2 = Image.open("food2.png")
-imgtoy1  = Image.open("toy1.png")
-imgtoy2  = Image.open("toy2.png")
-imgtoy3  = Image.open("toy3.png")
-imgcat1  = Image.open("cat1.png")
-imgcat2  = Image.open("cat2.png")
-imgcat3  = Image.open("cat3.png")
-imgcat4  = Image.open("cat4.png")
-imgcat5  = Image.open("cat5.png")
+house1response = requests.get(house1url)
+food1response = requests.get(house1url)
+food2response = requests.get(house1url)
+toy1response = requests.get(house1url)
+toy2response = requests.get(house1url)
+toy3response = requests.get(house1url)
+cat1response = requests.get(house1url)
+cat2response = requests.get(house1url)
+cat3response = requests.get(house1url)
+cat4response = requests.get(house1url)
+cat5response = requests.get(house1url)
+
+mainimage = Image.open(BytesIO(house1response.content))
+imgfood1 =  Image.open(BytesIO(food1response.content))  
+imgfood2 =  Image.open(BytesIO(food2response.content))
+imgtoy1  =  Image.open(BytesIO(toy1response.content))
+imgtoy2  =  Image.open(BytesIO(toy2response.content))
+imgtoy3  =  Image.open(BytesIO(toy3response.content))
+imgcat1  =  Image.open(BytesIO(cat1response.content))
+imgcat2  =  Image.open(BytesIO(cat2response.content))
+imgcat3  =  Image.open(BytesIO(cat3response.content))
+imgcat4  =  Image.open(BytesIO(cat4response.content))
+imgcat5  =  Image.open(BytesIO(cat5response.content))
 
 if event['food1']:
 	mainimage.paste(imgfood1, (0, 0), imgfood1)
