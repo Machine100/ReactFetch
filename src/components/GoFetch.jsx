@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 
 class GoFetch extends Component {
 	state = {
-		count: 0,
-		monsterpic: 'https://s3.amazonaws.com/derffred/scribble.jpg'
+		monsterpic: 'https://s3.amazonaws.com/derffred/outputdestination.png'
 	}
 	render(){
 		const {count} = this.state
@@ -11,9 +10,7 @@ class GoFetch extends Component {
 		return(
 			<React.Fragment>
 				//<img src={monsterpic} alt='' />
-				//<span>{monsterpic}</span>
-				<span>{count}</span>
-				<button>innertext</button>
+				<button>addtoy</button>
 			</React.Fragment>
 		);
 	}
